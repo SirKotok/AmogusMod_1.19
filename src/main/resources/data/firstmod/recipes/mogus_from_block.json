@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "firstmod:amogus_block"
+    }
+    ],
+  "result": {
+    "item": "firstmod:green",
+    "count": 9
+  }
+}

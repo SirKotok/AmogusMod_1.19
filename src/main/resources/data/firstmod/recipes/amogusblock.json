@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+    "pattern": [
+
+      "###",
+      "###",
+      "###"
+    ],
+  "key": {
+      "#" : {
+        "item": "firstmod:green"
+      }
+  },
+  "result": {
+    "item": "firstmod:amogus_block"
+
+  }
+}
