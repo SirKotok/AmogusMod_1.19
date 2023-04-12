@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+    "pattern": [
+
+      "^^^",
+      "^#^",
+      "^^^"
+    ],
+  "key": {
+      "#" : {
+        "item": "firstmod:green"
+      },
+    "^" : {
+      "item": "minecraft:diamond"
+    }
+  },
+
+  "result": {
+    "item": "firstmod:blue"
+
+  }
+}

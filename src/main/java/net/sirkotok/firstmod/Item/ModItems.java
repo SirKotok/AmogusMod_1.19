@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sirkotok.firstmod.FirstMod;
+import net.sirkotok.firstmod.Item.custom.Talkingmogusitem;
 
 public class ModItems {
 
@@ -19,6 +20,9 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COOL_TAB)));
     public static final RegistryObject<Item> GREEN = ITEMS.register("green",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COOL_TAB)));
+
+    public static final RegistryObject<Item> BLUE = ITEMS.register("blue",
+            () -> new Talkingmogusitem(new Item.Properties().tab(ModCreativeModeTab.COOL_TAB).stacksTo(1)));
 
 // creates register for items so they cool af in game. Mandatory
     public static void register(IEventBus eventBus){
