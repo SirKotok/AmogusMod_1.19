@@ -1,6 +1,7 @@
 package net.sirkotok.firstmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -10,8 +11,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sirkotok.firstmod.Item.ModItems;
 import net.sirkotok.firstmod.block.ModBlocks;
+import net.sirkotok.firstmod.entity.ModEntityTypes;
+import net.sirkotok.firstmod.entity.client.CrewmateRenderer;
 import net.sirkotok.firstmod.sound.ModSounds;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(FirstMod.MOD_ID)
@@ -22,14 +26,18 @@ public class FirstMod
 
     public FirstMod()
     {
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
+        ModEntityTypes.register(modEventBus);
 
         ModSounds.register(modEventBus);
+
+        GeckoLib.initialize();
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -47,6 +55,8 @@ public class FirstMod
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
+            EntityRenderers.register(ModEntityTypes.CREWMATE.get(), CrewmateRenderer::new);
 
         }
     }
